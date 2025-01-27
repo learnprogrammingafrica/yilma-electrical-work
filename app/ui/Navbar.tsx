@@ -12,12 +12,12 @@ const Navbar = () => {
         >
           Log in
         </Link>
-        <Link
+        {/* <Link
           href="/register"
           className="rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
         >
           Register
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
