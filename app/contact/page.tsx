@@ -1,5 +1,8 @@
+"use client";
 import React from "react";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
@@ -9,12 +12,12 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/api/placeholder/1920/1080')" }}
+          style={{ backgroundImage: "url('/images/electrical-hero.jpg')" }}
         />
         <div className="relative z-20 text-center text-white px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
           <p className="text-xl max-w-2xl mx-auto">
-            Let&apos;s bring your vision to life
+            Let&apos;s power up your projects together
           </p>
         </div>
       </section>
@@ -38,7 +41,9 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="John"
+                    required
                   />
                 </div>
                 <div>
@@ -47,7 +52,9 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Doe"
+                    required
                   />
                 </div>
               </div>
@@ -58,7 +65,9 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="john.doe@example.com"
+                  required
                 />
               </div>
 
@@ -68,7 +77,9 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Electrical Installation Inquiry"
+                  required
                 />
               </div>
 
@@ -78,13 +89,15 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   rows={6}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Describe your electrical needs..."
+                  required
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors duration-200"
+                className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200"
               >
                 Send Message
               </button>
@@ -98,7 +111,7 @@ export default function ContactPage() {
 
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
-                  <Phone className="h-6 w-6 text-red-500 mt-1" />
+                  <Phone className="h-6 w-6 text-blue-500 mt-1" />
                   <div>
                     <h4 className="font-medium">Phone</h4>
                     <p className="text-gray-300">+251 (912) 12-4637</p>
@@ -106,15 +119,15 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Mail className="h-6 w-6 text-red-500 mt-1" />
+                  <Mail className="h-6 w-6 text-blue-500 mt-1" />
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-gray-300">contact@lekafilm.com</p>
+                    <p className="text-gray-300">contact@yilmElectrical.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 text-red-500 mt-1" />
+                  <MapPin className="h-6 w-6 text-blue-500 mt-1" />
                   <div>
                     <h4 className="font-medium">Address</h4>
                     <p className="text-gray-300">
@@ -124,7 +137,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Clock className="h-6 w-6 text-red-500 mt-1" />
+                  <Clock className="h-6 w-6 text-blue-500 mt-1" />
                   <div>
                     <h4 className="font-medium">Working Hours</h4>
                     <p className="text-gray-300">
@@ -144,6 +157,7 @@ export default function ContactPage() {
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
+                title="Yilma Electrical Services Location"
               ></iframe>
             </div>
           </div>

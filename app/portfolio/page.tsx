@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Play } from "lucide-react";
+import { Lightbulb, Settings, HardHat, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,64 +10,70 @@ export default function PortfolioPage() {
   const portfolioItems = [
     {
       id: 1,
-      title: "Commercial - Sports Brand",
-      category: "commercials",
-      type: "video",
-      thumbnail: "/images/p_sport.webp",
-      videoUrl: "https://www.youtube.com/embed/your-video-id",
-      description: "Dynamic sports commercial showcasing athlete performance",
+      title: "Residential Wiring Upgrade",
+      category: "residential",
+      type: "image",
+      image: "/images/p_residential.webp",
+      description:
+        "Comprehensive wiring upgrade for modern homes ensuring safety and efficiency.",
     },
     {
       id: 2,
-      title: "Product Photography",
-      category: "photography",
-      type: "image",
-      image: "/images/p_product.webp",
-      description: "High-end product photography for luxury brand",
+      title: "Commercial Lighting Installation",
+      category: "commercial",
+      type: "video",
+      thumbnail: "/images/p_commercial.webp",
+      videoUrl: "https://www.youtube.com/embed/your-video-id",
+      description:
+        "State-of-the-art lighting solutions for commercial spaces to enhance ambiance and functionality.",
     },
     {
       id: 3,
-      title: "Short Film - 'The Journey'",
-      category: "films",
-      type: "video",
-      thumbnail: "/images/p_film.webp",
-      videoUrl: "https://www.youtube.com/embed/your-video-id",
-      description: "Award-winning short film about self-discovery",
+      title: "Industrial Power Systems",
+      category: "industrial",
+      type: "image",
+      image: "/images/p_industrial.webp",
+      description:
+        "Robust power system installations tailored for industrial facilities.",
     },
     {
       id: 4,
-      title: "Corporate Event Coverage",
-      category: "events",
+      title: "Maintenance Service Agreement",
+      category: "maintenance",
       type: "image",
-      image: "/images/p_event.webp",
-      description: "Annual tech conference documentary",
+      image: "/images/p_maintenance1.webp",
+      description:
+        "Ongoing maintenance services to ensure electrical systems run smoothly and efficiently.",
     },
     {
       id: 5,
-      title: "Music Video - 'Harmony'",
-      category: "music",
+      title: "Smart Home Automation",
+      category: "smart-home",
       type: "video",
-      thumbnail: "/images/p_music.webp",
+      thumbnail: "/images/p_smart-home.webp",
       videoUrl: "https://www.youtube.com/embed/your-video-id",
-      description: "Visual storytelling through music",
+      description:
+        "Integrating smart technology for seamless home automation and control.",
     },
     {
       id: 6,
-      title: "Fashion Lookbook",
-      category: "photography",
+      title: "Emergency Electrical Repairs",
+      category: "emergency",
       type: "image",
-      image: "/images/p_fashion.webp",
-      description: "Summer collection photography series",
+      image: "/images/p_emergency.webp",
+      description:
+        "Quick and reliable emergency repair services to handle unexpected electrical issues.",
     },
   ];
 
   const filters = [
     { id: "all", label: "All Work" },
-    { id: "commercials", label: "Commercials" },
-    { id: "films", label: "Films" },
-    { id: "photography", label: "Photography" },
-    { id: "music", label: "Music Videos" },
-    { id: "events", label: "Events" },
+    { id: "residential", label: "Residential" },
+    { id: "commercial", label: "Commercial" },
+    { id: "industrial", label: "Industrial" },
+    { id: "maintenance", label: "Maintenance" },
+    { id: "smart-home", label: "Smart Home" },
+    { id: "emergency", label: "Emergency" },
   ];
 
   const filteredItems =
@@ -82,12 +88,12 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/api/placeholder/1920/1080')" }}
+          style={{ backgroundImage: "url('/images/electrical-hero.jpg')" }}
         />
         <div className="relative z-20 text-center text-white px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Portfolio</h1>
           <p className="text-xl max-w-2xl mx-auto">
-            Showcasing our creative excellence
+            Showcasing our electrical expertise
           </p>
         </div>
       </section>
@@ -102,7 +108,7 @@ export default function PortfolioPage() {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-6 py-2 rounded-full transition-colors duration-200 ${
                   activeFilter === filter.id
-                    ? "bg-red-600 text-white"
+                    ? "bg-blue-600 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
@@ -129,10 +135,11 @@ export default function PortfolioPage() {
                         ? item.thumbnail ?? "/images/default-thumbnail.webp"
                         : item.image ?? "/images/default-image.webp"
                     }
-                    width={100}
-                    height={100}
+                    width={500}
+                    height={400}
                     alt={item.title}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                   {item.type === "video" && (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -146,7 +153,7 @@ export default function PortfolioPage() {
                     <p className="text-gray-300 text-sm">{item.description}</p>
                     <div className="mt-4">
                       <Link href={`/portfolio/${item.id}`}>
-                        <button className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-700 transition-colors">
+                        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors">
                           View Project
                         </button>
                       </Link>
