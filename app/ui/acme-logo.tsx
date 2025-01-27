@@ -1,13 +1,17 @@
-import { GlobeAltIcon } from '@heroicons/react/24/outline';
-import { lusitana } from '@/app/ui/fonts';
+import { ShieldExclamationIcon } from "@heroicons/react/24/outline";
+import { lusitana } from "@/app/ui/fonts";
+import Link from "next/link";
 
-export default function AcmeLogo() {
+export default function EthioEarthquakeNotifierLogo() {
   return (
-    <div
-      className={`${lusitana.className} flex flex-row items-center leading-none text-white`}
+    <Link
+      className={`${lusitana.className} flex flex-row items-center gap-2 leading-none`}
+      href="/"
     >
-      <GlobeAltIcon className="h-12 w-12 rotate-[15deg]" />
-      <p className="text-[44px]">Acme</p>
-    </div>
+      <ShieldExclamationIcon className="h-12 w-12 text-red-600" />
+      <p className="text-[34px] font-semibold">
+        <span className="text-white">Ethio Earthquake Notifier</span>{" "}
+      </p>
+    </Link>
   );
 }
