@@ -16,12 +16,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen">
         <div className="absolute inset-0 bg-black/60 z-10" />
-        <div
-          className="absolute inset-0 bg-[url('/path-to-electrical-background.jpg')] bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/path-to-electrical-background.jpg')",
-          }}
-        />
+        <div className="absolute inset-0  bg-cover bg-center" />
         <div className="relative z-20 flex items-center justify-center h-full text-white px-4">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
